@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="fonts.css">
     <title>Singolo</title>
+    <script async src="script.js"></script>
 </head>
 <body>
     <header class="header">
@@ -15,38 +16,36 @@
                     <h1 class="logo_font">singolo<span class="header__logo-colored">*</span></h1>
                 </div>
                 <nav class="header__navigation">
-                    <ul class="navigation">
-                        <li class="header__navigation-li"><a href="#" class="active">HOME</a></li>
-                        <li class="header__navigation-li"><a href="#">SERVICES</a></li>
-                        <li class="header__navigation-li"><a href="#">PORTFOLIO</a></li>
-                        <li class="header__navigation-li"><a href="#">ABOUT</a></li>
-                        <li class="header__navigation-li"><a href="#">CONTACT</a></li>
+                    <ul id="menu" class="navigation">
+                        <li class="header__navigation-li"><a href="#slider" class="active">HOME</a></li>
+                        <li class="header__navigation-li"><a href="#our-services">SERVICES</a></li>
+                        <li class="header__navigation-li"><a href="#portfolio">PORTFOLIO</a></li>
+                        <li class="header__navigation-li"><a href="#about-us">ABOUT</a></li>
+                        <li class="header__navigation-li"><a href="#contact">CONTACT</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
     <main>
-        <section class="slider">
+        <section class="slider" id="slider">
             <div class="wrapper">
                 <div class="slider__content">
-                    <div class="arrow-left">
-                        <a href="#"><img src="./assets/img/arrow_left.png" alt="Left" class="arrow_left"></a>
+                    <img class="arrow-left" src="./assets/img/arrow_left.png" alt="Left">
+                    <div class="slides">
+                        <img class="phone_vertical" src="./assets/img/phone_vertical.png" alt="Phone">
+                        <img class="phone_horizontal" src="./assets/img/phone_horizontal.png" alt="Phone">
                     </div>
-                    <div class="phone_vertical">
-                            <img src="./assets/img/phone_vertical.png" alt="Phone">
+                    <div class="slides hidden" >
+                        <img class="phones" src="assets/Slide2.png" alt="Slide2">
                     </div>
-                    <div class="phone_horizontal">
-                            <img src="./assets/img/phone_horizontal.png" alt="Phone">
-                    </div>
-                    <div class="arrow-right">
-                        <a href="#"><img src="./assets/img/arrow_right.png" alt="Right" class="arrow_right"></a>
-                    </div>
-
+                    <img class="arrow-right" src="./assets/img/arrow_right.png" alt="Right">
+                    <div class="screen_off_vertical hidden"></div>
+                    <div class="screen_off_horizontal hidden"></div>
                 </div>
             </div>
         </section>
-        <section class="our-services">
+        <section class="our-services" id="our-services">
             <div class="wrapper">
                 <div class="our-services_head">
                     <h2>Our Services</h2>
@@ -111,7 +110,7 @@
                 </div>
             </div>
         </section>
-        <section class="portfolio">
+        <section class="portfolio" id="portfolio">
             <div class="wrapper">
                 <div class="portfolio__content">
                     <div class="portfolio_head">
@@ -125,14 +124,14 @@
                         </div>
                     </div>
                     <div class="portfolio_navigation">
-                        <ul class="portfolio_tags">
+                        <ul class="portfolio_tags" id="portfolio_menu">
                             <li class="portfolio_tags_content"><button class="tags tags_selected">All</button></li>
                             <li class="portfolio_tags_content"><button class="tags">Web Design</button></li>
                             <li class="portfolio_tags_content"><button class="tags">Graphic Design</button></li>
                             <li class="portfolio_tags_content"><button class="tags">Artwork</button></li>
                         </ul>
                     </div>
-                    <div class="portfolio_layout-4_column">
+                    <div class="portfolio_layout-4_column" id="portfolio_img_">
                         <img class="portfolio_img" src="./assets/img/portfolio/portfolio_1.jpg" alt="picture">
                         <img class="portfolio_img" src="./assets/img/portfolio/portfolio_2.jpg" alt="picture">
                         <img class="portfolio_img" src="./assets/img/portfolio/portfolio_3.jpg" alt="picture">
@@ -149,7 +148,7 @@
                 </div>
             </div>
         </section>
-        <section class="about-us">
+        <section class="about-us" id="about-us">
             <div class="wrapper">
                     <div class="about-us__head">
                         <div class="about-us__head_h2">
@@ -214,22 +213,33 @@
                     </div>
             </div>
         </section>
-        <section class="contact">
+        <section class="contact" id="contact">
             <div class="wrapper">
                 <div class="contact__block">
                     <h2>Get a Quote</h2>
                     <p class="contact__description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                     <div class="contact__content">
                         <div class="contact__form">
-                            <form action method="POST" name="feedback">
-                                <input type="text" name="name" required placeholder="Name (Required)">
-                                <input type="email" name="email" required placeholder="Email (Required)">
-                                <input type="text" name="subject" placeholder="Subject">
-                                <textarea name="question" placeholder="Describe your project in detail..." class="contact__question"></textarea>
+                            <form action method="GET" name="feedback">
+                                <input id="name" type="text" name="name" required placeholder="Name (Required)">
+                                <input id="email" type="email" name="email" required placeholder="Email (Required)">
+                                <input id="subject" type="text" name="subject" placeholder="Subject">
+                                <textarea id="describe" name="question" placeholder="Describe your project in detail..." class="contact__question"></textarea>
                                 <div class="contact__button">
-                                    <button type="submit" class="button">Submit</button>
+                                    <button class="button" id="button">Submit</button>
                                 </div>
                             </form>
+                            <div id="message-block" class="hidden">
+                                <div id="message" class="message">
+                                    <p>Письмо отправлено</p>
+                                    <br>
+                                    <p id="subject-result"></p>
+                                    <br>
+                                    <p id="describe-result"></p>
+                                    <br>
+                                    <button class="button close_button" id="close-button">OK</button>
+                                </div>
+                            </div>
                         </div>  
                         <div class="contact-info">
                             <h3>Contact Information</h3>
