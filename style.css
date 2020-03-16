@@ -184,15 +184,7 @@ header a {
     margin-bottom: 2px
 }
 
-.phone_vertical:hover {
-    cursor: pointer;
-}
-
-
-.phone_horizontal {
-    cursor: pointer;
-}   
-
+  
 .phones {
     margin: 0 82px;
 }
@@ -673,7 +665,7 @@ header a {
     width: 188px;
     background-color: black;
     left: 327px;
-    top: 223px
+    top: 216px
 }
 
 .screen_off_horizontal {
@@ -682,7 +674,7 @@ header a {
     width: 333px;
     background-color: black;
     left: 663px;
-    top: 292px;
+    top: 285px;
 }
 
 .screen_off_vertical:hover {
@@ -734,4 +726,32 @@ header a {
     color: white;
     padding: 5px 15px;
     margin: 0 250px;
+}
+
+.phone_ver-layer {
+    position: absolute;
+    left: 312px;
+    top: 151px;
+    height: 458px;
+    width: 216px;
+    z-index: 1;
+}
+
+
+.phone_hor-layer {
+    position: absolute;
+    left: 603px;
+    top: 271px;
+    height: 216px;
+    width: 458px;
+    z-index: 1;
+}
+
+.phone_ver-layer:hover {
+    cursor: pointer;
+}
+
+
+.phone_hor-layer:hover {
+    cursor: pointer;
 }

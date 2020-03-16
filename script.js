@@ -7,8 +7,8 @@ const NEXT = document.querySelector(".arrow-right");
 let slider = document.getElementsByClassName("slider");
 
 // screen off
-const SCREEN_OFF_VER = document.querySelector(".phone_vertical");
-const SCREEN_OFF_HOR = document.querySelector(".phone_horizontal");
+const SCREEN_OFF_VER = document.querySelector(".phone_ver-layer");
+const SCREEN_OFF_HOR = document.querySelector(".phone_hor-layer");
 
 
 // portfolio border
@@ -32,30 +32,38 @@ MENU.addEventListener('click', (e) => {
 // slider
 PREV.addEventListener('click', (e) => {
     if (slider[0].classList[1] == "slide2") {
-        document.querySelector("body > main > section.slider > div > div > div:nth-child(2)").classList.remove('hidden');
-        document.querySelector("body > main > section.slider > div > div > div:nth-child(3)").classList.add('hidden');
+        document.querySelector("body > main > section.slider > div > div > div:nth-child(4)").classList.remove('hidden');
+        document.querySelector("body > main > section.slider > div > div > div:nth-child(5)").classList.add('hidden');
         slider[0].classList.remove('slide2');
+        document.querySelector(".phone_ver-layer").classList.remove('hidden');
+        document.querySelector(".phone_hor-layer").classList.remove('hidden');
     }
     else { 
-        document.querySelector("body > main > section.slider > div > div > div:nth-child(2)").classList.add('hidden');
-        document.querySelector("body > main > section.slider > div > div > div:nth-child(3)").classList.remove('hidden');
+        document.querySelector("body > main > section.slider > div > div > div:nth-child(4)").classList.add('hidden');
+        document.querySelector("body > main > section.slider > div > div > div:nth-child(5)").classList.remove('hidden');
         document.querySelector(".screen_off_horizontal").classList.add('hidden');
         document.querySelector(".screen_off_vertical").classList.add('hidden');
+        document.querySelector(".phone_ver-layer").classList.add('hidden');
+        document.querySelector(".phone_hor-layer").classList.add('hidden');
         slider[0].classList.add('slide2');
      }
 });
 
 NEXT.addEventListener('click', (e) => {
     if (slider[0].classList[1] == "slide2") {
-        document.querySelector("body > main > section.slider > div > div > div:nth-child(2)").classList.remove('hidden');
-        document.querySelector("body > main > section.slider > div > div > div:nth-child(3)").classList.add('hidden');
+        document.querySelector("body > main > section.slider > div > div > div:nth-child(4)").classList.remove('hidden');
+        document.querySelector("body > main > section.slider > div > div > div:nth-child(5)").classList.add('hidden');
         slider[0].classList.remove('slide2');
+        document.querySelector(".phone_ver-layer").classList.remove('hidden');
+        document.querySelector(".phone_hor-layer").classList.remove('hidden');
     }
     else { 
-        document.querySelector("body > main > section.slider > div > div > div:nth-child(2)").classList.add('hidden');
-        document.querySelector("body > main > section.slider > div > div > div:nth-child(3)").classList.remove('hidden');
+        document.querySelector("body > main > section.slider > div > div > div:nth-child(4)").classList.add('hidden');
+        document.querySelector("body > main > section.slider > div > div > div:nth-child(5)").classList.remove('hidden');
         document.querySelector(".screen_off_horizontal").classList.add('hidden');
         document.querySelector(".screen_off_vertical").classList.add('hidden');
+        document.querySelector(".phone_ver-layer").classList.add('hidden');
+        document.querySelector(".phone_hor-layer").classList.add('hidden');
         slider[0].classList.add('slide2');
      }
 });
