@@ -172,6 +172,10 @@ header a {
 }
 
 
+button {
+    outline: none;
+}
+
 .arrow-left:hover {
     cursor: pointer;
 }
@@ -738,7 +742,8 @@ header a {
     background-color: rgb(49, 52, 63);
     color: white;
     padding: 5px 15px;
-    margin: 0 250px;
+    margin: 0 -74px;
+    max-width: 30px;
 }
 
 .phone_ver-layer {
@@ -891,10 +896,13 @@ header a {
    .header {
        max-width: 102vw;
    } 
-   .logo_font {
+   .logo_font1 {
     position: absolute;
     top: 29px;
     left: 71px;
+   }
+   .logo_font {
+       margin-left: 0vw;
    }
    .navigation {
        display: none;
@@ -1066,10 +1074,13 @@ header a {
     .header {
         max-width: 100vw;
     } 
+    .logo_font1 {
+        position: absolute;
+        top: 29px;
+        left: 71px;
+    }
     .logo_font {
-     position: absolute;
-     top: 29px;
-     left: 101px;
+           margin-left: 0vw;
     }
     .navigation {
         display: none;
