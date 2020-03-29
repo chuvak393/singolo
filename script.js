@@ -1,5 +1,8 @@
 // menu
 const MENU = document.getElementById('menu');
+const BURGER_LINK = document.querySelector(".burger-navigation")
+const BURGER_LINKS = BURGER_LINK.querySelectorAll("a")
+
 
 // slider
 const PREV = document.querySelector(".arrow-left");
@@ -20,13 +23,50 @@ const PORTFOLIO_MENU = document.getElementById('portfolio_menu');
 // buttons
 const BUTTON = document.getElementById('button');
 const CLOSE_BUTTON = document.getElementById('close-button');
-
+const BURGER_BUTTON = document.querySelector('#burger__btn');
 //
 //
 // menu
 MENU.addEventListener('click', (e) => {
     MENU.querySelectorAll('a').forEach(el => el.classList.remove('active'));
     e.target.classList.add('active');
+});
+
+
+BURGER_BUTTON.addEventListener('click', (e) => {
+    if (document.querySelector("body > header > div > div > div.header__burger-menu").classList.contains('menu_active')) {
+        BURGER_BUTTON.style.transform = 'rotate(0deg)';
+        document.querySelector("body > header > div > div > div.header__burger-menu").classList.remove('menu_active');
+    }
+    else {
+        BURGER_BUTTON.style.transform = 'rotate(90deg)';
+        document.querySelector("body > header > div > div > div.header__burger-menu").classList.add('menu_active');
+    }
+});
+BURGER_LINK.addEventListener('click', (e) => {
+    BURGER_LINKS.forEach((event) =>{
+    if (document.querySelector("body > header > div > div > div.header__burger-menu").classList.contains('menu_active')) {
+        document.querySelector("body > header > div > div > div.header__burger-menu").classList.remove('menu_active');
+    }
+    BURGER_BUTTON.style.transform = 'rotate(0deg)';
+    })
+});
+
+
+window.addEventListener('scroll', (event) => {
+    let curPos = window.scrollY +95;
+    const sections = document.querySelectorAll('section');
+    const links = document.querySelectorAll('.header a');
+    sections.forEach((el) => {
+        if (el.offsetTop <= curPos && (el.offsetTop + el.offsetHeight) > curPos) {
+            links.forEach((a) => {
+                a.classList.remove('active');
+                if (el.getAttribute('id') === a.getAttribute('href').substring(1)) {
+                    a.classList.add('active')
+                }
+            });
+        }
+    });
 });
 
 // slider
